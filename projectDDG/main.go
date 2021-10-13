@@ -21,6 +21,10 @@ func main() {
 
 	apiV1 := router.Group("/api/v1")
 	{
+		apiV1.GET("/parseJson", func(c *gin.Context) {
+			apicontroller.JsonParser(c)
+		})
+
 		apiV1.POST("/parseJson", func(c *gin.Context) {
 			apicontroller.JsonParser(c)
 		})
