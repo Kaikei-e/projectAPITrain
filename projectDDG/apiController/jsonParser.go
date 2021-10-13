@@ -7,11 +7,14 @@ import (
 )
 
 func JsonParser(c *gin.Context) {
-	var users structs.Users 
+	var Users structs.Users 
 
-	c.BindJSON(&users)
+	c.BindJSON(&Users)
 
 	c.HTML(200, "return.html", gin.H{
-		"users": users.Usrs,
+		"users": Users,
+	})
+	c.JSON(200, gin.H{
+		"status": "ok",
 	})
 }

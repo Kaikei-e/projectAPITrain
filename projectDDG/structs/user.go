@@ -1,6 +1,6 @@
 package structs
 
-type user struct {
+type User struct {
 	ID      uint   `json:"_id" `
 	IsActive bool `json:"isActive" `
 	Name    string   `json:"name" `
@@ -8,5 +8,5 @@ type user struct {
 }
 
 type Users struct{
-	Usrs []user
+	Usrs []User
 }
