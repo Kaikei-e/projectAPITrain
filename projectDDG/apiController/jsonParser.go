@@ -28,9 +28,11 @@ func JsonParser(c *gin.Context) {
 
 	/*
 	c.HTML(200, "return.html", gin.H{
-		"users": Users,
+		"users": theUser,
 	})
 	*/
+
+
 	c.JSON(200, gin.H{
 		"status": "ok",
 		"data": theUser,
