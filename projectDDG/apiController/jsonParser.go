@@ -2,7 +2,6 @@ package apicontroller
 
 import (
 	//	"fmt"
-	"log"
 	"projectDD/structs"
 
 	"github.com/gin-gonic/gin"
@@ -23,7 +22,7 @@ func JsonParser(c *gin.Context) {
 
 	err := c.BindJSON(&theUser)
 	if err != nil {
-		log.Fatalln(err)
+		panic(err)
 	}
 
 	/*
