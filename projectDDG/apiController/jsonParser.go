@@ -1,7 +1,7 @@
 package apicontroller
 
 import (
-	"fmt"
+	//	"fmt"
 	"log"
 	"projectDD/structs"
 
@@ -9,11 +9,19 @@ import (
 )
 
 func JsonParser(c *gin.Context) {
-	var Users structs.Users 
+	var theUser structs.User 
+	//var data []byte
 
-	fmt.Println(c.Params)
+	//dataByID := c.PostForm("jsData")
+	//c.Data(400, "body", data)
 
-	err := c.BindJSON(&Users)
+	//dataS := string(data)
+
+	//fmt.Println(dataS)
+	//fmt.Println(dataByID)
+
+
+	err := c.BindJSON(&theUser)
 	if err != nil {
 		log.Fatalln(err)
 	}
@@ -25,7 +33,7 @@ func JsonParser(c *gin.Context) {
 	*/
 	c.JSON(200, gin.H{
 		"status": "ok",
-		"data": Users,
+		"data": theUser,
 	})
 	
 }
